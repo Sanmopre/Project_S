@@ -27,8 +27,16 @@ public class Shooting : MonoBehaviour
     {
         if (Input.GetButtonDown("Submit"))
         {
-            if (w_type == Weapon_Type.W_2) { w_type = Weapon_Type.W_1; }
-            if (w_type == Weapon_Type.W_1) { w_type = Weapon_Type.W_2; }
+            if (w_type == Weapon_Type.W_2)
+            {
+                w_type = Weapon_Type.W_1;
+            }
+            else {
+                w_type = Weapon_Type.W_2;
+            }
+
+
+
         }
 
         if (Input.GetButtonDown("Fire1")) {
@@ -41,18 +49,7 @@ public class Shooting : MonoBehaviour
         switch (weapon_t)
         {
 
-        case Weapon_Type.W_1:
-
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
-
-        break;
-
-
-        case Weapon_Type.W_2:
-
-         GameObject bullet_1 = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        case Weapon_Type.W_1:         GameObject bullet_1 = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
          GameObject bullet_2 = Instantiate(bulletPrefab, firePoint_2.position, firePoint_2.rotation);
                 GameObject bullet_3 = Instantiate(bulletPrefab, firePoint_3.position, firePoint_3.rotation);
 
@@ -64,6 +61,17 @@ public class Shooting : MonoBehaviour
 
                 Rigidbody2D rb_3 = bullet_3.GetComponent<Rigidbody2D>();
                 rb_3.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+
+
+
+
+        break;
+
+
+        case Weapon_Type.W_2:
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
 
           break;
         }
