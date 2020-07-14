@@ -8,7 +8,12 @@ public class Shooting : MonoBehaviour
     public Transform firePoint_2;
     public Transform firePoint_3;
 
+    public int fire_rate = 3;
+    private int fire_counter = 0;
+
     public GameObject bulletPrefab;
+
+    private bool shooting = false;
 
     private enum Weapon_Type 
     { 
@@ -39,9 +44,31 @@ public class Shooting : MonoBehaviour
 
         }
 
-        if (Input.GetButtonDown("Fire1")) {
+
+
+
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            shooting = true;
+        }
+
+        if (Input.GetButtonUp("Fire1")) 
+        {
+            shooting = false;
+        }
+
+        if (shooting == true && fire_counter % fire_rate == 0) 
+        {
             Shoot(w_type);
         }
+
+
+        fire_counter++;
+
+        if (shooting == false)
+            fire_counter = 0;
+        
     }
 
     void Shoot(Weapon_Type weapon_t) {
