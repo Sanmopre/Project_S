@@ -5,10 +5,14 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
-
+   
     public Rigidbody2D rb;
     public Camera cam;
 
+    public float dashSpeed;
+    private float dashTime;
+    public float startDashTime;
+    private int direction;
 
     Vector2 movement;
     Vector2 mousePos;

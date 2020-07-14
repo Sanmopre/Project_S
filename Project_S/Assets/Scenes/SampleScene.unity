@@ -3556,6 +3556,8 @@ MonoBehaviour:
   moveSpeed: 5
   rb: {fileID: 1674811234}
   cam: {fileID: 519420031}
+  dashSpeed: 0
+  startDashTime: 0
 --- !u!50 &1674811234
 Rigidbody2D:
   serializedVersion: 4

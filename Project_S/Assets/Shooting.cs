@@ -8,6 +8,7 @@ public class Shooting : MonoBehaviour
     public Transform firePoint_2;
     public Transform firePoint_3;
 
+
     public int fire_rate = 3;
     private int fire_counter = 0;
 
@@ -63,6 +64,7 @@ public class Shooting : MonoBehaviour
         if (shooting == true && fire_counter % fire_rate == 0) 
         {
             Shoot(w_type);
+
         }
 
 
