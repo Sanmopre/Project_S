@@ -35,9 +35,11 @@ public class Shooting : MonoBehaviour
             if (w_type == Weapon_Type.W_2)
             {
                 w_type = Weapon_Type.W_1;
+                fire_rate = 14;
             }
             else {
                 w_type = Weapon_Type.W_2;
+                fire_rate = 3;
             }
 
 
@@ -99,7 +101,7 @@ public class Shooting : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
-
+                
           break;
         }
     }
