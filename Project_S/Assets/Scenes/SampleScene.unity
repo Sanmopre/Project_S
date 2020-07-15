@@ -121,7 +121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 226809}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fire Point 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 168542834}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fire Point 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2142,7 +2142,7 @@ Tilemap:
   - first: {x: -4, y: 1, z: 0}
     second:
       m_TileIndex: 5
-      m_TileSpriteIndex: 5
+      m_TileSpriteIndex: 12
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -2358,7 +2358,7 @@ Tilemap:
   - first: {x: -5, y: 2, z: 0}
     second:
       m_TileIndex: 7
-      m_TileSpriteIndex: 7
+      m_TileSpriteIndex: 11
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -3455,22 +3455,22 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300068, guid: 16701b4fe69ec244aad099e7c5d410b7, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300052, guid: 16701b4fe69ec244aad099e7c5d410b7, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300068, guid: 16701b4fe69ec244aad099e7c5d410b7, type: 3}
   - m_RefCount: 80
     m_Data: {fileID: 21300000, guid: fc4bad7d7d0aa5a45b918df0699ef2a4, type: 3}
   - m_RefCount: 65
@@ -4042,7 +4042,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -4135,7 +4135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 525998408}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Fire Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4201,7 +4201,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1452464095
+--- !u!1 &1008938236
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4209,22 +4209,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1452464097}
-  - component: {fileID: 1452464096}
+  - component: {fileID: 1008938238}
+  - component: {fileID: 1008938237}
   m_Layer: 0
-  m_Name: A*
+  m_Name: Pathfinding
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1452464096
+--- !u!114 &1008938237
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452464095}
+  m_GameObject: {fileID: 1008938236}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78396926cbbfc4ac3b48fc5fc34a87d1, type: 3}
@@ -4232,7 +4232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAIIexLnY/GZwIAAA0FAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFlVE1z2jAQ/SuMzoWxwQTorXUI6SEJE9rJxRdZXmMNsuSR5PCR4b93JRvsuifEvv1472nlL8KlqYBZpTeaZy8qA/J9RNyZfBt14DOc6F7JHb/ALeeDZ7ZwSdTnvFPLFcZDV2ZUCVZz9kPuhUsOMFhLnitdrrM9xMpYg+GcCgMIaWVdtcTQ14ic8Ge8ciVnPE0X7nTB0yoYXfHIQFrQ/dTJfPawiGbrcbBoi24l4WQ5X4bzWfSwHoeRL68lE7SsIHNaui7hsi0NmykSVbYZThFTQnDTUiT2XHkLYlqZGgViQsYpSva8wskMAwXwfWGdgH75W54bsC1DTc+PXKN3TV/yUzWGltQcGmafVNTgTZh6Vk3Tl//wcejhXKvy+TY3DNwMW3B2eKdnRo3tOd4PP/aoe4OOVBxoKuCjAPmqNlrVMkPQ6tqV1gamj93fu7S4AHbo4g3VQbCuOseDwV05DVev/hQLXqYOmkRNYCeUd9xvBWi8m19I2O+MaVtg1LH4Y+A33feXqwWeuDYWoValdPRSVWuXStbeM6emtrHSEny4JV2BpMKet9jGDq9wgPXGDpAn6p5RO7zFbq9jUOLDXX4QDKCtOt4vyxTq+AKmeKut4BI60g54RZ9iJWWzYX1PbmW7WueU9cr2Nc/+XS2ShtM8pSwNo/l8QR9W41k0y8OUrZZTB0Up8bvHJeqkYtsQbe3BW5Ndc4l7dvu6jDaaVn7bM02PG34pVc9yLnO1YxpAvjUd7sRB4xB8l9k642jQDqzl0t83+UqIUOwAWXJvlHil65PVNOm6JKTin8q6SEJi/zlJyJVc/wJQSwMEFAAACAgAAAgh7OcilxFrAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTVUVBKL0osyCgGihiCOKWZKSB2tFKSoVFaUmJykqGJqal5opmlrrGJcZphUrKlhRFIyiRJKRaovqSyINUvMTcVoicgsSQjLTMvJTMvXc+9KDPFHWS0UmwtAFBLAQItABQAAAgIAAAIIexLnY/GZwIAAA0FAAALACQAAAAAAAAAAAAAAAAAAABncmFwaDAuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLAQItABQAAAgIAAAIIeznIpcRawAAAHgAAAAJACQAAAAAAAAAAAAAALQCAABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwUGAAAAAAIAAgC4AAAAagMAAAAA
+    dataString: UEsDBBQAAAgIAAAIIeyNGbPmSAIAAO8EAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzk0HuyEMvbWGkB4ITGgnF1+EtMYaZMmjj/A1/PeuZINd2p5sv/d29+1q5TMRytbAnDZzI/hCcyBfByS8k0+DjnyBA91qtRYnuGreBXdlENGoeaNOaMSTEGZ1Bc4I9k1tZRAPEfRKFNpUM76FTFtnES6otICU0S5EK4TOA3LARzoOIcc29BSegwu+MVAOTKf7t8orJmlVAw9+O/Hoqh41MoWdtIrgmmkphW1tEHesY5sZra3HJlDABcW2YvkUP0sQ29K1H7fgZVFYcK0lQ49TYXA6TVbyXTcjq6jdNb4+qPShzihJo6cm6eIv/iGJdGF09XKtmwxDDVcKtnujR0at6820D08740kcz57KHd1IeC9Bveq50V5xJJ3xIdRbSKfd5621rAS26/DG6h3o6/8fTujhErs/ZFJUm0B9fmyAtdRx3pMgBoMn8wMNx62wbQpEg4tfFn7SbX99WuJZGOuQartUwd5GexOkZBZnFrrxLtNGQYRb0zUoKt1xhWnc/RHecb2yd8wzDRelLd5y1/2/C4lwpx8O76iV3t8Oy5Z6vwBbLr2TQkFnOhCvOKdMK9VsWH8m17C1NwVlvbCtF/zP1cJLtSnGRTJJv0wSOubpw+NwlDyx9ClJNgUrhhsSd08o7JPKVWO0HQ+emuqSK9yz6/9jMDe0jtvODd3PxanSvZELVeg1MwBq2WS4GQeDRfBW8hkXOKA1OCdUPG9yzonUbAc8vyXKY6ezgzM077LkpBYf2gUkJ1n8Z+TkQi6/AVBLAwQUAAAICAAACCHsT+W9o20AAAB4AAAACQAkAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAatWKkstKs7Mz1OyUjDRM9IzNNVRUEovSizIKAaKGII4pZkpIHa0UnJqUpp5mqGlkbGlYaJ5ipGuiYGpoVmykZmhYVJacppBklIsUH1JZUGqX2JuKkRPQGJJRlpmXkpmXrqee1FmijvIaKXYWgBQSwECLQAUAAAICAAACCHsjRmz5kgCAADvBAAACwAkAAAAAAAAAAAAAAAAAAAAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQFQSwECLQAUAAAICAAACCHsT+W9o20AAAB4AAAACQAkAAAAAAAAAAAAAACVAgAAbWV0YS5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsFBgAAAAACAAIAuAAAAE0DAAAAAA==
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -4264,7 +4264,7 @@ MonoBehaviour:
   heuristic: 2
   heuristicScale: 1
   threadCount: 1
-  maxFrameTime: 1
+  maxFrameTime: 10
   batchGraphUpdates: 0
   graphUpdateBatchingInterval: 0.2
   euclideanEmbedding:
@@ -4273,19 +4273,19 @@ MonoBehaviour:
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
   showGraphs: 1
---- !u!4 &1452464097
+--- !u!4 &1008938238
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1452464095}
+  m_GameObject: {fileID: 1008938236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1674811230
 GameObject:
@@ -4300,7 +4300,7 @@ GameObject:
   - component: {fileID: 1674811234}
   - component: {fileID: 1674811233}
   - component: {fileID: 1674811235}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4371,7 +4371,7 @@ Transform:
   - {fileID: 168542834}
   - {fileID: 519420032}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1674811233
 MonoBehaviour:
