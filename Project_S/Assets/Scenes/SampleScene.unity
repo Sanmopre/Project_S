@@ -32276,8 +32276,11 @@ MonoBehaviour:
   moveSpeed: 5
   rb: {fileID: 1674811234}
   cam: {fileID: 519420031}
+  sprint: 2.5
+  stamina: 500
   dashSpeed: 0
   startDashTime: 0
+  stamina_bar: {fileID: 1334355911}
 --- !u!50 &1674811234
 Rigidbody2D:
   serializedVersion: 4
