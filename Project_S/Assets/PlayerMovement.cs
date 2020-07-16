@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     public float sprint = 1.5f;
     public int stamina = 500;
+    public int max_stamina = 500;
     private bool sprinting = false;
 
     public float dashSpeed;
@@ -49,7 +50,14 @@ public class PlayerMovement : MonoBehaviour
             stamina = stamina - 2;
         }
         else {
+            if(stamina < max_stamina)
             stamina++;
+        }
+
+
+
+        if (stamina <= 0) {
+            sprinting = false;
         }
 
 

@@ -32277,7 +32277,8 @@ MonoBehaviour:
   rb: {fileID: 1674811234}
   cam: {fileID: 519420031}
   sprint: 2.5
-  stamina: 500
+  stamina: 200
+  max_stamina: 200
   dashSpeed: 0
   startDashTime: 0
   stamina_bar: {fileID: 1334355911}
