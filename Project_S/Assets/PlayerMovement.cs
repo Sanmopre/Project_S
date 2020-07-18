@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float sprint = 1.5f;
     public int stamina = 500;
     public int max_stamina = 500;
-    private bool sprinting = false;
+    public bool sprinting = false;
 
     public float dashSpeed;
     private float dashTime;
