@@ -141,7 +141,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b405c661077914ea68187a2cdd3654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 0.5
-  hit_mask:
-    serializedVersion: 2
-    m_Bits: 4294967295
+  damage: 100

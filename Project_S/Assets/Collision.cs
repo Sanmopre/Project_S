@@ -5,9 +5,19 @@ using UnityEngine;
 public class Collision : MonoBehaviour
 {
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public int damage;
+
+    private void OnCollisionEnter2D(Collision2D hitinfo)
     {
+
+        Health enemy = hitinfo.otherCollider.GetComponent<Health>();
+
+        if (enemy != null) {
+            enemy.TakeDamage(damage);
+        }
+
         Destroy(gameObject);
+
     }
 
 }
