@@ -12,11 +12,12 @@ public class PlayerMovement : MonoBehaviour
     public float sprint = 1.5f;
     public int stamina = 500;
     public int max_stamina = 500;
+
+    public int sprint_cooldown;
+    private int cd_sprint = 100;
+
     public bool sprinting = false;
 
-    public float dashSpeed;
-    private float dashTime;
-    public float startDashTime;
     private int direction;
 
     Vector2 movement;
@@ -35,9 +36,10 @@ public class PlayerMovement : MonoBehaviour
       movement.x = Input.GetAxisRaw("Horizontal");
       movement.y = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetButtonDown("Sprint"))
+        if (Input.GetButtonDown("Sprint") && cd_sprint >= sprint_cooldown)
         {
             sprinting = true;
+            cd_sprint = 0;
         }
 
         if (Input.GetButtonUp("Sprint"))
@@ -52,8 +54,13 @@ public class PlayerMovement : MonoBehaviour
         else {
             if(stamina < max_stamina)
             stamina++;
+            cd_sprint++;
         }
 
+
+
+           
+ 
 
 
         if (stamina <= 0) {

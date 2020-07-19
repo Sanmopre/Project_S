@@ -10,10 +10,12 @@ public class Collision : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D hitinfo)
     {
 
+
         Health enemy = hitinfo.otherCollider.GetComponent<Health>();
 
         if (enemy != null) {
-            enemy.TakeDamage(damage);
+
+            Destroy(enemy.gameObject);
         }
 
         Destroy(gameObject);
