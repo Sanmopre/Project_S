@@ -10,8 +10,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Destroy(gameObject);
-
+   
         health -= damage;
 
         if (health <= 0) {
@@ -20,9 +19,9 @@ public class Health : MonoBehaviour
 
     }
 
-    void Die() {
-        Instantiate(deathEffect, transform.position, Quaternion.identity);
+    void Die() {       
         Destroy(gameObject);
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
     }
 
 }
