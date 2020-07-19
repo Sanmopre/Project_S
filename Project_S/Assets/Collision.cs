@@ -7,19 +7,9 @@ public class Collision : MonoBehaviour
 
     public int damage;
 
-    private void OnCollisionEnter2D(Collision2D hitinfo)
+
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-
-
-        Health enemy = hitinfo.otherCollider.GetComponent<Health>();
-
-        if (enemy != null) {
-
-            Destroy(enemy.gameObject);
-        }
-
         Destroy(gameObject);
-
     }
-
 }
