@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     public int sprint_cooldown;
     private int cd_sprint = 100;
+    public int rotation_speed;
 
     public bool sprinting = false;
 
@@ -84,9 +85,14 @@ public class PlayerMovement : MonoBehaviour
             rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime * sprint);
         }
 
-
-        Vector2 lookDir = mousePos - rb.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle;
+        if (sprinting == false)
+        {
+            Vector2 lookDir = mousePos - rb.position;
+            float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+            rb.rotation = angle;
+        }
+        else {
+            rb.rotation = rb.rotation + rotation_speed;
+        }
     }
 }
