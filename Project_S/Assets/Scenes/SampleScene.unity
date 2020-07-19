@@ -45737,6 +45737,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1334355910}
+--- !u!1 &1379633994 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7922463251002656737, guid: e64591af0724a9448a708329b36d96b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 7922463252381077161}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1379634002
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379633994}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1660441171
 GameObject:
   m_ObjectHideFlags: 0
@@ -45917,7 +45939,7 @@ MonoBehaviour:
   stamina: 200
   max_stamina: 200
   sprint_cooldown: 60
-  rotation_speed: 7
+  rotation_speed: 8
   sprinting: 0
   stamina_bar: {fileID: 1334355911}
 --- !u!50 &1674811234
@@ -46265,12 +46287,12 @@ PrefabInstance:
     - target: {fileID: 7922463251002656743, guid: e64591af0724a9448a708329b36d96b8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5
+      value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 7922463251002656743, guid: e64591af0724a9448a708329b36d96b8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1.14
       objectReference: {fileID: 0}
     - target: {fileID: 7922463251002656743, guid: e64591af0724a9448a708329b36d96b8,
         type: 3}
