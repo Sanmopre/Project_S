@@ -1,0 +1,43 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Player_Health : MonoBehaviour
+{
+
+    public int hp;
+    private bool poisoned = false;
+    private int poison_damage = 0;
+    private int poison_time = 0;
+
+    // Update is called once per frame
+    void Update()
+    {
+       
+        //POISON MANAGER
+        if(poisoned == true)
+        {
+            if( poison_time % 3 == 0) {
+                Take_Damage(poison_damage);
+            }
+            poison_time--;
+        }
+
+        if (poison_time <= 0) {
+            poison_time = 0;
+            poisoned = false;
+        }
+
+    }
+
+
+    void Take_Damage(int damage) {
+        hp = hp - damage;
+    }
+
+    void Poison(int time, int damage) {
+        poisoned = true;
+        poison_damage = damage;
+
+    }
+}
