@@ -112,7 +112,7 @@ public class Shooting : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(bulletPrefab);
+      //ddd  Destroy(bulletPrefab);
     }
 
 }
