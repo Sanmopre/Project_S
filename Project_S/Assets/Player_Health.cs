@@ -41,11 +41,11 @@ public class Player_Health : MonoBehaviour
     }
 
 
-    void Take_Damage(int damage) {
+    public void Take_Damage(int damage) {
         hp = hp - damage;
     }
 
-    void Poison(int time, int damage) {
+    public void Poison(int time, int damage) {
         poisoned = true;
         poison_damage = damage;
 
