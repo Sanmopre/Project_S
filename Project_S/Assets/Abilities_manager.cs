@@ -12,16 +12,22 @@ public class Abilities_manager : MonoBehaviour
     private int trail_delay = 10;
     private int counter = 10;
 
+    public CircleCollider2D saw_collider;
+
     void Update()
     {
 
+        
+
         if (mov.sprinting)
         {
+            saw_collider.enabled = true;
             trail.enabled = true;
             this.gameObject.GetComponent<SpriteRenderer>().sprite = Ultimate_Sprite;
             counter = 15;
         }
         else {
+            saw_collider.enabled = false;
             if (counter < 0)
             {
                 trail.enabled = false;
@@ -30,4 +36,18 @@ public class Abilities_manager : MonoBehaviour
         }
         counter--;
     }
+
+
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        Health enemy = collider.GetComponent<Health>();
+
+        if (enemy != null && mov.sprinting)
+        {
+            enemy.TakeDamage(1000);
+        }
+
+
+    }
+
 }
