@@ -12,6 +12,8 @@ public class Abilities_manager : MonoBehaviour
     private int trail_delay = 10;
     private int counter = 10;
 
+    public int blade_damage;
+
     public CircleCollider2D saw_collider;
 
     void Update()
@@ -44,7 +46,7 @@ public class Abilities_manager : MonoBehaviour
 
         if (enemy != null && mov.sprinting)
         {
-            enemy.TakeDamage(1000);
+            enemy.TakeDamage(blade_damage);
         }
 
 
