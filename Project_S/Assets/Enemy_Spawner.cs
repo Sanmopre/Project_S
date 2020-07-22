@@ -6,11 +6,15 @@ public class Enemy_Spawner : MonoBehaviour
 {
 
     public GameObject enemy;
+    public GameObject enemy_shooter;
     float randX;
     float randY;
     Vector2 whereToSpawn;
     public float spawn_rate = 2f;
+    public float spawn_rate_shooter = 2f;
+
     float nextSpawn = 0.0f;
+    float nextSpawn_s = 0.0f;
 
 
 
@@ -33,6 +37,18 @@ public class Enemy_Spawner : MonoBehaviour
 
             whereToSpawn = new Vector2(randX, randY);
             Instantiate(enemy, whereToSpawn, Quaternion.identity);
+
+        }
+
+
+        if (Time.time > nextSpawn_s)
+        {
+            nextSpawn_s = Time.time + spawn_rate_shooter;
+            randX = Random.Range(-20, 20);
+            randY = Random.Range(2, -35);
+
+            whereToSpawn = new Vector2(randX, randY);
+            Instantiate(enemy_shooter, whereToSpawn, Quaternion.identity);
 
         }
     }

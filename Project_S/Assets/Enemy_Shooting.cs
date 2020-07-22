@@ -12,15 +12,23 @@ public class Enemy_Shooting : MonoBehaviour
     public GameObject bullet;
     public Transform position;
 
+    private GameObject player;
+    private Transform target;
 
     private int shoot_counter;
 
     public int range;
-    public Transform target;
 
     public Transform enemy;
 
     private bool in_range = true;
+
+
+    private void Start()
+    {
+        player = GameObject.Find("Character");
+        target = player.transform;
+    }
 
     // Update is called once per frame
     void Update()
