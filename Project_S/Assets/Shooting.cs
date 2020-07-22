@@ -37,7 +37,7 @@ public class Shooting : MonoBehaviour
             if (w_type == Weapon_Type.W_2)
             {
                 w_type = Weapon_Type.W_1;
-                fire_rate = 14;
+                fire_rate = 10;
             }
             else {
                 w_type = Weapon_Type.W_2;
