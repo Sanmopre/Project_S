@@ -247,7 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firerate: 40
   bulletForce: 7
-  bullet: {fileID: 4065831206166878607, guid: 9e43559a10e8e2b45b6d430f52d9a39c, type: 3}
+  bullet: {fileID: 6966536812492989658, guid: 9e43559a10e8e2b45b6d430f52d9a39c, type: 3}
   position: {fileID: 3365003993321166528}
   range: 8
   enemy: {fileID: 0}
