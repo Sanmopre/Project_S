@@ -29,6 +29,13 @@ public class Shooting : MonoBehaviour
 
     public float bulletForce = 20f;
 
+
+
+    private void Start()
+    {
+        fire_rate = 10;
+    }
+
     // Update is called once per frame
     void Update()
     {
