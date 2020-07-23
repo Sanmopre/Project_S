@@ -9,7 +9,7 @@ public class Player_Health : MonoBehaviour
     private bool poisoned = false;
     private int poison_damage = 0;
     private int poison_time = 0;
-
+    public bool damaged = true;
     public HealthBar hp_bar;
 
 
@@ -37,11 +37,12 @@ public class Player_Health : MonoBehaviour
         }
 
         hp_bar.Set_health(hp);
-
+        damaged = false;
     }
 
 
     public void Take_Damage(int damage) {
+        damaged = true;
         hp = hp - damage;
     }
 
