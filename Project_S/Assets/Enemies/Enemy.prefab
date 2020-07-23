@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 400
-  deathEffect: {fileID: 6739901476157464830, guid: 163cc8628af25b5448eac257bb47cdd9,
+  deathEffect: {fileID: 3284400263960112471, guid: 163cc8628af25b5448eac257bb47cdd9,
     type: 3}
 --- !u!58 &7016249928691147043
 CircleCollider2D:
