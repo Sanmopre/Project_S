@@ -12,6 +12,7 @@ public class Enemy_Spawner : MonoBehaviour
     Vector2 whereToSpawn;
     public float spawn_rate = 2f;
     public float spawn_rate_shooter = 2f;
+    public float increase_rate;
 
     float nextSpawn = 0.0f;
     float nextSpawn_s = 0.0f;
@@ -51,5 +52,10 @@ public class Enemy_Spawner : MonoBehaviour
             Instantiate(enemy_shooter, whereToSpawn, Quaternion.identity);
 
         }
+
+
+        
+        spawn_rate = spawn_rate - increase_rate;
+        spawn_rate_shooter = spawn_rate_shooter - increase_rate;
     }
 }

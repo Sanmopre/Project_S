@@ -6,7 +6,15 @@ public class Collision : MonoBehaviour
 {
 
     public int damage;
-    public int hit_count;
+    private GameObject obj;
+    public Score_Manager score;
+
+
+    private void Start()
+    {
+        obj = GameObject.Find("Score_system");
+        score = obj.GetComponent<Score_Manager>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -15,10 +23,10 @@ public class Collision : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
-            hit_count = 1;
+            score.score = score.score + 10;
         }
         else {
-            hit_count = 0;
+
         }
 
         Destroy(gameObject);

@@ -9,10 +9,12 @@ public class collision_enemy_bullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Player_Health player = collider.GetComponent<Player_Health>();
+        PlayerMovement move = collider.GetComponent<PlayerMovement>();
         Health enemy = collider.GetComponent<Health>();
 
         if (player != null)
         {
+            if (move.sprinting == false)
             player.Take_Damage(damage);
         }
 

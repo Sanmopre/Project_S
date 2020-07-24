@@ -5,6 +5,7 @@ using UnityEngine;
 public class collision_player : MonoBehaviour
 {
     public Player_Health player;
+    public PlayerMovement mov;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -12,6 +13,7 @@ public class collision_player : MonoBehaviour
 
         if (enemy != null)
         {
+            if(mov.sprinting == false)
             player.Take_Damage(20);
         }
 

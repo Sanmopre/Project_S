@@ -5,23 +5,45 @@ using UnityEngine;
 public class Score_Manager : MonoBehaviour
 {
 
-    public float score = 0f;
+    public int score = 0;
     public int score_time;
     private int counter = 0;
-    public Collision hit;
-    public Player_Health health;
+    public GameObject bullet;
 
+    private GameObject player;
+    private Player_Health health;
+
+
+    public int d = 100;
+    public int c = 200;
+    public int b = 350;
+    public int a = 500;
+    public int s = 800;
+    public int ss = 1200;
+    public int sss = 1750;
+
+
+    public bool in_d = false;
+    public bool in_c = false;
+    public bool in_b = false;
+    public bool in_a = false;
+    public bool in_s = false;
+    public bool in_ss = false;
+    public bool in_sss = false;
+
+
+    private void Start()
+    {
+        player = GameObject.Find("Character");
+        health = player.GetComponent<Player_Health>();
+    }
 
     // Update is called once per frame
     void Update()
     {
-        
-        score = score + hit.hit_count * 1.5f;
-
-        if (health.damaged == true) {
-            score = score - 50;
+        if (health.damaged) {
+            score = score - 100;
         }
-
-        score--;
+        Debug.Log(score);
     }
 }

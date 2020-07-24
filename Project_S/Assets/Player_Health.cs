@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Health : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class Player_Health : MonoBehaviour
     {
         hp_bar.Set_Max_health(hp);
     }
+
+
     void Update()
     {
        
@@ -36,7 +39,13 @@ public class Player_Health : MonoBehaviour
             poisoned = false;
         }
 
+
         hp_bar.Set_health(hp);
+
+
+        if (hp <= 0) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
         damaged = false;
     }
 
