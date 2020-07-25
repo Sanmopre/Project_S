@@ -7,12 +7,19 @@ public class Enemy_Spawner : MonoBehaviour
 
     public GameObject enemy;
     public GameObject enemy_shooter;
+
+    private GameObject player;
+    private Transform trans;
+
     float randX;
     float randY;
     Vector2 whereToSpawn;
     public float spawn_rate = 2f;
     public float spawn_rate_shooter = 2f;
     public float increase_rate;
+
+    public int distance_x;
+    public int distance_y;
 
     float nextSpawn = 0.0f;
     float nextSpawn_s = 0.0f;
@@ -23,7 +30,8 @@ public class Enemy_Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Character");
+        trans = player.GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -32,12 +40,16 @@ public class Enemy_Spawner : MonoBehaviour
 
         if (Time.time > nextSpawn)
         {
+
             nextSpawn = Time.time + spawn_rate;
             randX = Random.Range(-20,20);
             randY = Random.Range(2, -35);
 
-            whereToSpawn = new Vector2(randX, randY);
-            Instantiate(enemy, whereToSpawn, Quaternion.identity);
+            if (randX < trans.position.x - distance_x || randX > trans.position.x + distance_x && randY < trans.position.y - distance_y || randY > trans.position.y + distance_y)
+            {
+                whereToSpawn = new Vector2(randX, randY);
+                Instantiate(enemy, whereToSpawn, Quaternion.identity);
+            }
 
         }
 
@@ -47,10 +59,11 @@ public class Enemy_Spawner : MonoBehaviour
             nextSpawn_s = Time.time + spawn_rate_shooter;
             randX = Random.Range(-20, 20);
             randY = Random.Range(2, -35);
-
-            whereToSpawn = new Vector2(randX, randY);
+            if (randX < trans.position.x - distance_x || randX > trans.position.x + distance_x && randY < trans.position.y - distance_y || randY > trans.position.y + distance_y)
+            {
+                whereToSpawn = new Vector2(randX, randY);
             Instantiate(enemy_shooter, whereToSpawn, Quaternion.identity);
-
+            }
         }
 
 

@@ -7,14 +7,27 @@ public class Abilities_manager : MonoBehaviour
     public TrailRenderer trail;
     public Sprite Ultimate_Sprite;
     public Sprite Normal_Sprite;
-    public bool in_ultimate = false;
     public PlayerMovement mov;
     private int trail_delay = 10;
     private int counter = 10;
 
+
+    private GameObject obj;
+    private Score_Manager score;
+
+
     public int blade_damage;
+    public int blade_score = 5;
 
     public CircleCollider2D saw_collider;
+
+
+    private void Start()
+    {
+        obj = GameObject.Find("Score_system");
+        score = obj.GetComponent<Score_Manager>();
+    }
+
 
     void Update()
     {
@@ -47,6 +60,8 @@ public class Abilities_manager : MonoBehaviour
         if (enemy != null && mov.sprinting)
         {
             enemy.TakeDamage(blade_damage);
+
+            score.score = score.score + blade_score;
         }
 
 

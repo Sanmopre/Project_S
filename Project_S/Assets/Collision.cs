@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Collision : MonoBehaviour
 {
-
+    public int score_sum = 5;
     public int damage;
     private GameObject obj;
     public Score_Manager score;
@@ -23,7 +23,7 @@ public class Collision : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
-            score.score = score.score + 10;
+            score.score = score.score + score_sum;
         }
         else {
 
