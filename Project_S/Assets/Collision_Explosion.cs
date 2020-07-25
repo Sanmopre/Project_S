@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Collision_Explosion : MonoBehaviour
 {
+
+    public int aoe_damage;
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Health enemy = collider.GetComponent<Health>();
@@ -11,7 +13,7 @@ public class Collision_Explosion : MonoBehaviour
         if (enemy != null)
         {
 
-            enemy.TakeDamage(1000);
+            enemy.TakeDamage(aoe_damage);
         }
         Destroy(gameObject);
     }

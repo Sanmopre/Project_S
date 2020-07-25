@@ -9,7 +9,7 @@ public class Missile_Collider : MonoBehaviour
     public int score_sum = 5;
     public int damage;
     private GameObject obj;
-    public Score_Manager score;
+    private Score_Manager score;
 
     public GameObject explosion;
 
@@ -31,11 +31,11 @@ public class Missile_Collider : MonoBehaviour
         Health enemy = collider.GetComponent<Health>();
 
         if (enemy != null)
-        { 
-            
+        {
+            score.score = score.score + score_sum;
             enemy.TakeDamage(damage);
         }
-        Destroy(gameObject);
+        Destroy(gameObject,0.10f);
 
     }
 
