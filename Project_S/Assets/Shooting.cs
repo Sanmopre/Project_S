@@ -17,7 +17,7 @@ public class Shooting : MonoBehaviour
 
     private bool shooting = false;
 
-    private enum Weapon_Type 
+    public enum Weapon_Type 
     { 
         W_1,
         W_2,
@@ -25,7 +25,7 @@ public class Shooting : MonoBehaviour
         NONE
     }
 
-    private Weapon_Type w_type = Weapon_Type.W_1;
+    public Weapon_Type w_type = Weapon_Type.W_1;
 
     public float bulletForce = 20f;
 
