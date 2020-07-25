@@ -37,6 +37,7 @@ public class Score_Manager : MonoBehaviour
     {
         if (score < 0) { score = 0; }
 
+
         Debug.Log(score);
     }
 }
