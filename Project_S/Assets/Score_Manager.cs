@@ -35,9 +35,89 @@ public class Score_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (score < 0) { score = 0; }
 
 
-        Debug.Log(score);
+
+        if (score < d) {
+    in_d = false;
+    in_c = false;
+    in_b = false;
+    in_a = false;
+    in_s = false;
+    in_ss = false;
+    in_sss = false;
+}
+
+        if (score > d && score < c) {
+            in_d = true;
+            in_c = false;
+            in_b = false;
+            in_a = false;
+            in_s = false;
+            in_ss = false;
+            in_sss = false;
+        }
+
+        if (score > c && score < b) {
+            in_d = false;
+            in_c = true;
+            in_b = false;
+            in_a = false;
+            in_s = false;
+            in_ss = false;
+            in_sss = false;
+        }
+
+        if (score > b && score < a) {
+            in_d = false;
+            in_c = false;
+            in_b = true;
+            in_a = false;
+            in_s = false;
+            in_ss = false;
+            in_sss = false;
+        }
+
+        if (score > a && score < s) {
+            in_d = false;
+            in_c = false;
+            in_b = false;
+            in_a = true;
+            in_s = false;
+            in_ss = false;
+            in_sss = false;
+        }
+
+        if (score > s && score < ss) {
+            in_d = false;
+            in_c = false;
+            in_b = false;
+            in_a = false;
+            in_s = true;
+            in_ss = false;
+            in_sss = false;
+        }
+
+        if (score > ss && score < sss) {
+            in_d = false;
+            in_c = false;
+            in_b = false;
+            in_a = false;
+            in_s = false;
+            in_ss = true;
+            in_sss = false;
+        }
+
+        if (score > sss) {
+            in_d = false;
+            in_c = false;
+            in_b = false;
+            in_a = false;
+            in_s = false;
+            in_ss = false;
+            in_sss = true;
+        }
     }
 }
