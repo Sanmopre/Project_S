@@ -8,11 +8,6 @@ public class Score_Manager : MonoBehaviour
     public int score = 0;
     public int score_time;
     private int counter = 0;
-    public GameObject bullet;
-
-    private GameObject player;
-    private Player_Health health;
-
 
     public int d = 100;
     public int c = 200;
@@ -34,16 +29,14 @@ public class Score_Manager : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.Find("Character");
-        health = player.GetComponent<Player_Health>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (health.damaged) {
-            score = score - 100;
-        }
+        if (score < 0) { score = 0; }
+
         Debug.Log(score);
     }
 }

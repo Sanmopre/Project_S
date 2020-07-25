@@ -13,12 +13,18 @@ public class Player_Health : MonoBehaviour
     public bool damaged = true;
     public HealthBar hp_bar;
 
+    private GameObject x;
+    private Score_Manager score;
+
 
 
 
     private void Start()
     {
         hp_bar.Set_Max_health(hp);
+
+        x = GameObject.Find("Score_system");
+        score = x.GetComponent<Score_Manager>();
     }
 
 
@@ -53,6 +59,8 @@ public class Player_Health : MonoBehaviour
     public void Take_Damage(int damage) {
         damaged = true;
         hp = hp - damage;
+
+        score.score = score.score - 50 - score.score/3;
     }
 
     public void Poison(int time, int damage) {
