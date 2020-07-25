@@ -14,6 +14,7 @@ public class Shooting : MonoBehaviour
     private int fire_counter = 0;
 
     public GameObject bulletPrefab;
+    public GameObject missilePrefab;
 
     private bool shooting = false;
 
@@ -41,17 +42,26 @@ public class Shooting : MonoBehaviour
     {
         if (Input.GetButtonDown("Submit"))
         {
+
+
+
             if (w_type == Weapon_Type.W_2)
             {
                 w_type = Weapon_Type.W_1;
                 fire_rate = 10;
             }
-            else {
+            else if (w_type == Weapon_Type.W_3)
+            {
                 w_type = Weapon_Type.W_2;
                 fire_rate = 3;
             }
+            else if (w_type == Weapon_Type.W_1)
+            {
+                w_type = Weapon_Type.W_3;
+                fire_rate = 20;
+            }
 
-
+    
 
         }
 
@@ -113,6 +123,14 @@ public class Shooting : MonoBehaviour
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
                 
           break;
+
+
+        case Weapon_Type.W_3:
+                GameObject missile = Instantiate(missilePrefab, firePoint.position, firePoint.rotation);
+                Rigidbody2D rb_m = missile.GetComponent<Rigidbody2D>();
+                rb_m.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+
+                break;
         }
     }
 
