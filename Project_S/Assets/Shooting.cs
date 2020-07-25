@@ -9,6 +9,7 @@ public class Shooting : MonoBehaviour
     public Transform firePoint_3;
 
     public PlayerMovement mov;
+    private int cd_cast = 0;
 
     public int fire_rate = 3;
     private int fire_counter = 0;
@@ -69,9 +70,10 @@ public class Shooting : MonoBehaviour
 
 
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1")  && cd_cast > fire_rate)
         {
             shooting = true;
+            cd_cast = 0;
         }
 
         if (Input.GetButtonUp("Fire1")) 
@@ -87,9 +89,11 @@ public class Shooting : MonoBehaviour
 
 
         fire_counter++;
-
+        cd_cast++;
         if (shooting == false)
+        {
             fire_counter = 0;
+        }
         
     }
 
