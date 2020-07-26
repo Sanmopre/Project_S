@@ -59,7 +59,7 @@ public class Shooting : MonoBehaviour
             else if (w_type == Weapon_Type.W_1)
             {
                 w_type = Weapon_Type.W_3;
-                fire_rate = 20;
+                fire_rate = 30;
             }
 
     
@@ -83,8 +83,7 @@ public class Shooting : MonoBehaviour
 
         if (shooting == true && fire_counter % fire_rate == 0 && mov.sprinting == false) 
         {
-            Shoot(w_type);
-
+                Shoot(w_type);
         }
 
 

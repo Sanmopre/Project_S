@@ -37,7 +37,7 @@ public class Score_Manager : MonoBehaviour
     {
 
         if (score < 0) { score = 0; }
-        if (score > sss) { score = sss; }
+        if (score > sss + 10) { score = sss + 10; }
 
 
 
