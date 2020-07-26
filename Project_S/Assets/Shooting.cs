@@ -14,8 +14,12 @@ public class Shooting : MonoBehaviour
     public int fire_rate = 3;
     private int fire_counter = 0;
 
+    public int heat_count = 0;
+
     public GameObject bulletPrefab;
     public GameObject missilePrefab;
+
+    public Overheat_Slider heat;
 
     private bool shooting = false;
 
@@ -27,7 +31,7 @@ public class Shooting : MonoBehaviour
         NONE
     }
 
-    public Weapon_Type w_type = Weapon_Type.W_1;
+    public Weapon_Type w_type = Weapon_Type.W_2;
 
     public float bulletForce = 20f;
 
@@ -35,6 +39,7 @@ public class Shooting : MonoBehaviour
 
     private void Start()
     {
+        heat.Set_Max_heat(200);
         fire_rate = 10;
     }
 
@@ -43,8 +48,7 @@ public class Shooting : MonoBehaviour
     {
         if (Input.GetButtonDown("Submit"))
         {
-
-
+            heat_count = 0;
 
             if (w_type == Weapon_Type.W_2)
             {
@@ -59,7 +63,7 @@ public class Shooting : MonoBehaviour
             else if (w_type == Weapon_Type.W_1)
             {
                 w_type = Weapon_Type.W_3;
-                fire_rate = 30;
+                fire_rate = 40;
             }
 
     
@@ -84,6 +88,19 @@ public class Shooting : MonoBehaviour
         if (shooting == true && fire_counter % fire_rate == 0 && mov.sprinting == false) 
         {
                 Shoot(w_type);
+            if (w_type == Weapon_Type.W_2) {
+                heat_count = heat_count + 1;
+            }
+
+            if (w_type == Weapon_Type.W_1)
+            {
+                heat_count = heat_count + 4;
+            }
+
+            if (w_type == Weapon_Type.W_3)
+            {
+                heat_count = heat_count + 20;
+            }
         }
 
 
@@ -93,7 +110,9 @@ public class Shooting : MonoBehaviour
         {
             fire_counter = 0;
         }
-        
+
+
+        heat.Set_heat(heat_count);
     }
 
     void Shoot(Weapon_Type weapon_t) {
