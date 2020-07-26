@@ -45941,8 +45941,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5a39e6ed70a1c4b982007df7f6c690, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Max_hp: 300
   hp: 300
-  damaged: 1
   hp_bar: {fileID: 93917029}
 --- !u!96 &404898013 stripped
 TrailRenderer:
