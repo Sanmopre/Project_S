@@ -35,7 +35,7 @@ public class Missile_Collider : MonoBehaviour
             score.score = score.score + score_sum;
             enemy.TakeDamage(damage);
         }
-        Destroy(gameObject,0.10f);
+        Destroy(gameObject,0.05f);
 
     }
 

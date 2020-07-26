@@ -5,12 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Player_Health : MonoBehaviour
 {
-
+    public int Max_hp;
     public int hp;
     private bool poisoned = false;
     private int poison_damage = 0;
     private int poison_time = 0;
-    public bool damaged = true;
     public HealthBar hp_bar;
 
     private GameObject x;
@@ -20,7 +19,7 @@ public class Player_Health : MonoBehaviour
 
     private void Start()
     {
-        hp_bar.Set_Max_health(hp);
+        hp_bar.Set_Max_health(Max_hp);
 
         x = GameObject.Find("Score_system");
         score = x.GetComponent<Score_Manager>();
@@ -51,12 +50,21 @@ public class Player_Health : MonoBehaviour
         if (hp <= 0) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
-        damaged = false;
+
+
+
+        if (score.score > score.s) {
+            hp++;
+        }
+
+        if (Max_hp < hp) {
+            hp = Max_hp;
+        }
+
     }
 
 
     public void Take_Damage(int damage) {
-        damaged = true;
         hp = hp - damage;
 
         score.score = score.score - 50 - score.score/3;
