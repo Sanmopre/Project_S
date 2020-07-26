@@ -18,7 +18,6 @@ public class Player_Health : MonoBehaviour
 
 
 
-
     private void Start()
     {
         hp_bar.Set_Max_health(hp);

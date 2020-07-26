@@ -18,6 +18,9 @@ public class Enemy_Spawner : MonoBehaviour
     public float spawn_rate_shooter = 2f;
     public float increase_rate;
 
+    public float max_spawn;
+    public float max_spawn_shooter;
+
     public int distance_x;
     public int distance_y;
 
@@ -66,8 +69,15 @@ public class Enemy_Spawner : MonoBehaviour
             }
         }
 
+        if (spawn_rate < max_spawn) {
+            spawn_rate = max_spawn;
+        }
 
-        
+        if (spawn_rate_shooter < max_spawn_shooter)
+        {
+            spawn_rate_shooter = max_spawn_shooter;
+        }
+
         spawn_rate = spawn_rate - increase_rate;
         spawn_rate_shooter = spawn_rate_shooter - increase_rate;
     }
