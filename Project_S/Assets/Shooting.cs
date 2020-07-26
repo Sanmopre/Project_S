@@ -40,7 +40,7 @@ public class Shooting : MonoBehaviour
     private void Start()
     {
         heat.Set_Max_heat(200);
-        fire_rate = 10;
+        fire_rate = 3;
     }
 
     // Update is called once per frame
