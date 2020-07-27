@@ -9,9 +9,14 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Camera cam;
 
+    private bool can_activate_boost = true;
+
     public float sprint = 1.5f;
-    public int stamina = 500;
-    public int max_stamina = 500;
+    public int stamina = 200;
+    private int first_point;
+    private int second_point;
+
+    public int max_stamina = 200;
 
     public int sprint_cooldown;
     private int cd_sprint = 100;
@@ -20,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     public bool sprinting = false;
 
     private int direction;
+
+    public Player_Health health;
 
     Vector2 movement;
     Vector2 mousePos;
@@ -30,6 +37,10 @@ public class PlayerMovement : MonoBehaviour
     {
         stamina_bar.Set_Max_Stamina(stamina);
         ab.Set_Max_Ability_cd(sprint_cooldown);
+
+        first_point = (stamina * 30) / 100;
+        second_point = (stamina * 42) / 100;
+
     }
 
     // Update is called once per frame
@@ -69,6 +80,27 @@ public class PlayerMovement : MonoBehaviour
             sprinting = false;
         }
 
+        if (sprinting) {
+
+            if (Input.GetButtonDown("Fire1") && can_activate_boost) {
+
+                if (first_point < stamina && second_point > stamina)
+                {
+                    stamina = stamina + 100;
+                    can_activate_boost = false;
+                }
+                else {
+                    health.Take_Damage(30);
+                }
+
+            }
+
+        }
+
+
+        if (!sprinting) { can_activate_boost = true; }
+
+        if (stamina > max_stamina) { stamina = max_stamina; }
 
         stamina_bar.Set_Stamina(stamina);
         ab.Set_Ability_cd(cd_sprint);
