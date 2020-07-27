@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8800763239920105943}
   - component: {fileID: 6187416450568197332}
   - component: {fileID: 6014207872935958474}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy_Shooter 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6203505340884357362}
   - component: {fileID: 3782930201329210581}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Enemy_Shooter_FX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5767106214291420131}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bullet_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
