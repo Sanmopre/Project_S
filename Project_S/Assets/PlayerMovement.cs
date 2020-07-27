@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public int sprint_cooldown;
     private int cd_sprint = 100;
     public int rotation_speed;
-
+    public Abilities_slider ab;
     public bool sprinting = false;
 
     private int direction;
@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         stamina_bar.Set_Max_Stamina(stamina);
+        ab.Set_Max_Ability_cd(sprint_cooldown);
     }
 
     // Update is called once per frame
@@ -70,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
 
 
         stamina_bar.Set_Stamina(stamina);
-
+        ab.Set_Ability_cd(cd_sprint);
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 

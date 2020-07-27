@@ -26,6 +26,8 @@ public class Abilities_manager : MonoBehaviour
     {
         obj = GameObject.Find("Score_system");
         score = obj.GetComponent<Score_Manager>();
+
+
     }
 
 
