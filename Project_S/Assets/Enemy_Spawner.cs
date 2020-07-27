@@ -7,6 +7,7 @@ public class Enemy_Spawner : MonoBehaviour
 
     public GameObject enemy;
     public GameObject enemy_shooter;
+    public GameObject exploding_enemy;
 
     private GameObject player;
     private Transform trans;
@@ -16,16 +17,19 @@ public class Enemy_Spawner : MonoBehaviour
     Vector2 whereToSpawn;
     public float spawn_rate = 2f;
     public float spawn_rate_shooter = 2f;
+    public float spawn_rate_exploding = 2f;
     public float increase_rate;
 
     public float max_spawn;
     public float max_spawn_shooter;
+    public float max_spawn_exploding;
 
     public int distance_x;
     public int distance_y;
 
     float nextSpawn = 0.0f;
     float nextSpawn_s = 0.0f;
+    float nextSpawn_e = 0.0f;
 
 
 
@@ -69,6 +73,18 @@ public class Enemy_Spawner : MonoBehaviour
             }
         }
 
+        if (Time.time > nextSpawn_e)
+        {
+            nextSpawn_e = Time.time + spawn_rate_exploding;
+            randX = Random.Range(-20, 20);
+            randY = Random.Range(2, -35);
+            if (randX < trans.position.x - distance_x || randX > trans.position.x + distance_x && randY < trans.position.y - distance_y || randY > trans.position.y + distance_y)
+            {
+                whereToSpawn = new Vector2(randX, randY);
+                Instantiate(exploding_enemy, whereToSpawn, Quaternion.identity);
+            }
+        }
+
         if (spawn_rate < max_spawn) {
             spawn_rate = max_spawn;
         }
@@ -78,7 +94,13 @@ public class Enemy_Spawner : MonoBehaviour
             spawn_rate_shooter = max_spawn_shooter;
         }
 
+        if (spawn_rate_exploding < max_spawn_exploding)
+        {
+            spawn_rate_exploding = max_spawn_exploding;
+        }
+
         spawn_rate = spawn_rate - increase_rate;
         spawn_rate_shooter = spawn_rate_shooter - increase_rate;
+        spawn_rate_exploding = spawn_rate_exploding - increase_rate;
     }
 }
