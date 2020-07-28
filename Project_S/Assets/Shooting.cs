@@ -44,7 +44,7 @@ public class Shooting : MonoBehaviour
     private void Start()
     {
         heat.Set_Max_heat(max_heat);
-        fire_rate = 3;
+        fire_rate = 50;
     }
 
     // Update is called once per frame
@@ -57,17 +57,17 @@ public class Shooting : MonoBehaviour
             if (w_type == Weapon_Type.W_2)
             {
                 w_type = Weapon_Type.W_1;
-                fire_rate = 10;
+                fire_rate = 190;
             }
             else if (w_type == Weapon_Type.W_3)
             {
                 w_type = Weapon_Type.W_2;
-                fire_rate = 3;
+                fire_rate = 50;
             }
             else if (w_type == Weapon_Type.W_1)
             {
                 w_type = Weapon_Type.W_3;
-                fire_rate = 40;
+                fire_rate = 490;
             }
 
     
@@ -76,9 +76,10 @@ public class Shooting : MonoBehaviour
 
 
 
+    
 
 
-        if (Input.GetButtonDown("Fire1")  && cd_cast > fire_rate)
+            if (Input.GetButtonDown("Fire1")  && cd_cast > fire_rate)
         {
             shooting = true;
             cd_cast = 0;

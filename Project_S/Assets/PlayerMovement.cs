@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public int max_stamina = 200;
 
     public int sprint_cooldown;
-    private int cd_sprint = 100;
+    private int cd_sprint = 1500;
     public int rotation_speed;
     public Abilities_slider ab;
     public bool sprinting = false;
@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
 
                 if (first_point < stamina && second_point > stamina)
                 {
-                    stamina = stamina + 100;
+                    stamina = stamina + 1000;
                     can_activate_boost = false;
                 }
                 else {
