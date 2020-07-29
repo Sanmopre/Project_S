@@ -11,9 +11,13 @@ public class Shooting : MonoBehaviour
     public PlayerMovement mov;
     private int cd_cast = 0;
 
-    public int fire_rate = 3;
-    private int fire_counter = 0;
+    private float fire_rate;
+    private float fire_counter = 0;
+    private int int_fire_counter = 0;
 
+    public float first_fr;
+    public float second_fr;
+    public float third_fr;
 
 
     public int heat_count = 0;
@@ -44,7 +48,7 @@ public class Shooting : MonoBehaviour
     private void Start()
     {
         heat.Set_Max_heat(max_heat);
-        fire_rate = 50;
+        fire_rate = second_fr;
     }
 
     // Update is called once per frame
@@ -57,17 +61,17 @@ public class Shooting : MonoBehaviour
             if (w_type == Weapon_Type.W_2)
             {
                 w_type = Weapon_Type.W_1;
-                fire_rate = 190;
+                fire_rate = first_fr;
             }
             else if (w_type == Weapon_Type.W_3)
             {
                 w_type = Weapon_Type.W_2;
-                fire_rate = 50;
+                fire_rate = second_fr;
             }
             else if (w_type == Weapon_Type.W_1)
             {
                 w_type = Weapon_Type.W_3;
-                fire_rate = 490;
+                fire_rate = third_fr;
             }
 
     
@@ -90,8 +94,9 @@ public class Shooting : MonoBehaviour
             shooting = false;
         }
 
-        if (shooting == true && fire_counter % fire_rate == 0 && mov.sprinting == false && heat_count < max_heat) 
+        if (shooting == true && fire_counter >= fire_rate && mov.sprinting == false && heat_count < max_heat) 
         {
+            fire_counter = 0;
                 Shoot(w_type);
             if (w_type == Weapon_Type.W_2) {
                 heat_count = heat_count + 1;
@@ -108,17 +113,19 @@ public class Shooting : MonoBehaviour
             }
         }
 
-
-        fire_counter++;
+        fire_counter = fire_counter + Time.deltaTime;
         cd_cast++;
         if (shooting == false)
         {
             fire_counter = 0;
+            int_fire_counter = 0;
         }
-
 
         heat.Set_heat(heat_count);
     }
+
+
+
 
     void Shoot(Weapon_Type weapon_t) {
 

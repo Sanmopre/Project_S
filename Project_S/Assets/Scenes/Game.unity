@@ -49585,13 +49585,28 @@ PrefabInstance:
     - target: {fileID: 6883580413343953386, guid: c964a649ce5b38242940557d13c6ec37,
         type: 3}
       propertyPath: fire_rate
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6883580413343953386, guid: c964a649ce5b38242940557d13c6ec37,
         type: 3}
       propertyPath: heat
       value: 
       objectReference: {fileID: 478498740}
+    - target: {fileID: 6883580413343953386, guid: c964a649ce5b38242940557d13c6ec37,
+        type: 3}
+      propertyPath: first_fr
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6883580413343953386, guid: c964a649ce5b38242940557d13c6ec37,
+        type: 3}
+      propertyPath: second_fr
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6883580413343953386, guid: c964a649ce5b38242940557d13c6ec37,
+        type: 3}
+      propertyPath: third_fr
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6883580413343953391, guid: c964a649ce5b38242940557d13c6ec37,
         type: 3}
       propertyPath: trail
