@@ -9,6 +9,8 @@ public class collision_enemy_bullet : MonoBehaviour
     private void Update()
     {
         Physics2D.IgnoreLayerCollision(11, 12);
+        Physics2D.IgnoreLayerCollision(12,14);
+        Physics2D.IgnoreLayerCollision(13,14);
     }
 
     public int damage;
