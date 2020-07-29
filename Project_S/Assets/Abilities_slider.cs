@@ -7,12 +7,12 @@ public class Abilities_slider : MonoBehaviour
 {
     public Slider slider;
 
-    public void Set_Ability_cd(int cd)
+    public void Set_Ability_cd(float cd)
     {
         slider.value = cd;
     }
 
-    public void Set_Max_Ability_cd(int cd)
+    public void Set_Max_Ability_cd(float cd)
     {
         slider.maxValue = cd;
         slider.value = cd;

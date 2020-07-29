@@ -12,14 +12,14 @@ public class PlayerMovement : MonoBehaviour
     private bool can_activate_boost = true;
 
     public float sprint = 1.5f;
-    public int stamina = 200;
-    private int first_point;
-    private int second_point;
+    public float stamina = 200;
+    private float first_point;
+    private float second_point;
 
     public int max_stamina = 200;
 
-    public int sprint_cooldown;
-    private int cd_sprint = 1500;
+    public float sprint_cooldown;
+    private float cd_sprint = 15;
     public int rotation_speed;
     public Abilities_slider ab;
     public bool sprinting = false;
@@ -62,12 +62,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (sprinting == true)
         {
-            stamina = stamina - 2;
+            stamina = stamina - Time.deltaTime * 5;
         }
         else {
             if(stamina < max_stamina)
-            stamina++;
-            cd_sprint++;
+            stamina = stamina + Time.deltaTime * 3;
+            cd_sprint = cd_sprint + Time.deltaTime;
         }
 
 
@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
 
                 if (first_point < stamina && second_point > stamina)
                 {
-                    stamina = stamina + 1000;
+                    stamina = stamina + 4;
                     can_activate_boost = false;
                 }
                 else {

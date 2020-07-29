@@ -49509,17 +49509,17 @@ PrefabInstance:
     - target: {fileID: 6883580413343953384, guid: c964a649ce5b38242940557d13c6ec37,
         type: 3}
       propertyPath: stamina
-      value: 2000
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6883580413343953384, guid: c964a649ce5b38242940557d13c6ec37,
         type: 3}
       propertyPath: max_stamina
-      value: 2000
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6883580413343953384, guid: c964a649ce5b38242940557d13c6ec37,
         type: 3}
       propertyPath: sprint_cooldown
-      value: 1500
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6883580413343953385, guid: c964a649ce5b38242940557d13c6ec37,
         type: 3}
