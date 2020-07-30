@@ -7,7 +7,7 @@ public class Rotationg_image : MonoBehaviour
 
     private Transform blade;
     public Rigidbody2D rb;
-    public int rotation_speed;
+    public float rotation_speed;
     // Update is called once per frame
     void Update()
     {

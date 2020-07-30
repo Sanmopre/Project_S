@@ -7,6 +7,8 @@ public class collision_player : MonoBehaviour
     public Player_Health player;
     public PlayerMovement mov;
 
+
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Health enemy = collider.GetComponent<Health>();

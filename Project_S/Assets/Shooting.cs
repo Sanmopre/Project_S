@@ -9,7 +9,7 @@ public class Shooting : MonoBehaviour
     public Transform firePoint_3;
 
     public PlayerMovement mov;
-    private int cd_cast = 0;
+    private float cd_cast = 0;
 
     private float fire_rate;
     private float fire_counter = 0;
@@ -83,7 +83,7 @@ public class Shooting : MonoBehaviour
     
 
 
-            if (Input.GetButtonDown("Fire1")  && cd_cast > fire_rate)
+            if (Input.GetButtonDown("Fire1")  && cd_cast >= fire_rate)
         {
             shooting = true;
             cd_cast = 0;
@@ -96,7 +96,7 @@ public class Shooting : MonoBehaviour
 
         if (shooting == true && fire_counter >= fire_rate && mov.sprinting == false && heat_count < max_heat) 
         {
-            fire_counter = 0;
+
                 Shoot(w_type);
             if (w_type == Weapon_Type.W_2) {
                 heat_count = heat_count + 1;
@@ -110,15 +110,15 @@ public class Shooting : MonoBehaviour
             if (w_type == Weapon_Type.W_3)
             {
                 heat_count = heat_count + 20;
-            }
+            }           
+            fire_counter = 0;
         }
 
         fire_counter = fire_counter + Time.deltaTime;
-        cd_cast++;
+        cd_cast = cd_cast + Time.deltaTime;
         if (shooting == false)
         {
-            fire_counter = 0;
-            int_fire_counter = 0;
+            fire_counter = fire_rate;
         }
 
         heat.Set_heat(heat_count);

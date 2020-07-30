@@ -19,6 +19,8 @@ public class Abilities_manager : MonoBehaviour
     public int blade_damage;
     public int blade_score = 5;
 
+    public int blade_counter = 0;
+
     public CircleCollider2D saw_collider;
 
 
@@ -50,6 +52,9 @@ public class Abilities_manager : MonoBehaviour
                 trail.enabled = false;
             }
             this.gameObject.GetComponent<SpriteRenderer>().sprite = Normal_Sprite;
+
+
+            blade_counter = 0;
         }
         counter--;
     }
@@ -62,7 +67,7 @@ public class Abilities_manager : MonoBehaviour
         if (enemy != null && mov.sprinting)
         {
             enemy.TakeDamage(blade_damage);
-
+            blade_counter++;
             score.score = score.score + blade_score;
         }
 

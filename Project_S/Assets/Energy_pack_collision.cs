@@ -5,6 +5,13 @@ using UnityEngine;
 public class Energy_pack_collision : MonoBehaviour
 {
     public int Energy_pack = 150;
+    private GameObject spawner;
+
+    private void Start()
+    {
+        spawner = GameObject.Find("Object_spawner");
+
+    }
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
