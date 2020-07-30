@@ -47681,7 +47681,7 @@ MonoBehaviour:
   enemy: {fileID: 7016249928691147042, guid: e64591af0724a9448a708329b36d96b8, type: 3}
   enemy_shooter: {fileID: 2311389252652768649, guid: 87b13ebf1fd3e2044965cee1bb923a72,
     type: 3}
-  exploding_enemy: {fileID: 6868184131685566567, guid: dfbe9b9461cb957418085a0923234ecf,
+  exploding_enemy: {fileID: 8609342770507284090, guid: dfbe9b9461cb957418085a0923234ecf,
     type: 3}
   spawn_rate: 1.75
   spawn_rate_shooter: 3
