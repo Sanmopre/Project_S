@@ -45,11 +45,7 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu() {
         Time.timeScale = 1f;
-
-
-        StartCoroutine(LoadLevel(0));
-
-
+        SceneManager.LoadScene("Main_menu");
     }
 
     public void QuitGame() {
@@ -57,14 +53,5 @@ public class PauseMenu : MonoBehaviour
     }
 
 
-    IEnumerator LoadLevel(int levelIndex)
-    {
-        transition.SetTrigger("Start");
-
-        yield return new WaitForSeconds(1);
-
-        SceneManager.LoadScene("Main_menu");
-
-    }
 
 }
