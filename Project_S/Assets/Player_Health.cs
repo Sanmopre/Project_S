@@ -52,11 +52,6 @@ public class Player_Health : MonoBehaviour
         }
 
 
-
-        if (score.score > score.s) {
-            hp++;
-        }
-
         if (Max_hp < hp) {
             hp = Max_hp;
         }
