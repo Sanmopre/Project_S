@@ -20,8 +20,8 @@ public class Shooting : MonoBehaviour
     public float third_fr;
 
 
-    public int heat_count = 0;
-    public int max_heat = 250;
+    public float heat_count = 0;
+    public float max_heat = 250;
 
 
     public GameObject bulletPrefab;
@@ -47,7 +47,7 @@ public class Shooting : MonoBehaviour
 
     private void Start()
     {
-        heat.Set_Max_heat(max_heat);
+        heat.Set_Max_heat((int)max_heat);
         fire_rate = second_fr;
     }
 
@@ -121,7 +121,7 @@ public class Shooting : MonoBehaviour
             fire_counter = fire_rate;
         }
 
-        heat.Set_heat(heat_count);
+        heat.Set_heat((int)heat_count);
     }
 
 
