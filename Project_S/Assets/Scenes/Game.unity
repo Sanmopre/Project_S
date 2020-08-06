@@ -47356,6 +47356,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &773849844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 773849845}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &773849845
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773849844}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.34, y: -29.9, z: -1517.7471}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &833028192
 GameObject:
   m_ObjectHideFlags: 0
@@ -47904,9 +47934,9 @@ MonoBehaviour:
   spawn_rate_shooter: 3
   spawn_rate_exploding: 2.5
   increase_rate: 0.01
-  max_spawn: 0.35
-  max_spawn_shooter: 1.25
-  max_spawn_exploding: 0.55
+  max_spawn: 0.25
+  max_spawn_shooter: 1.15
+  max_spawn_exploding: 0.35
   distance_x: 10
   distance_y: 8
 --- !u!4 &1175378024
@@ -48741,12 +48771,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 2710963409961484434, guid: 221a8dff1f4b02c499e0d40c9253a1aa, type: 3}
   energy: {fileID: 359772010672274580, guid: e756ad05d412344458d2356294b09295, type: 3}
-  pos_1: {x: 0, y: 0}
-  pos_2: {x: 0, y: 0}
-  pos_3: {x: 0, y: 0}
-  pos_4: {x: 0, y: 0}
-  spawn_rate_h: 14
-  spawn_rate_e: 14
+  pos_1: {x: -10, y: -3}
+  pos_2: {x: 11, y: -3}
+  pos_3: {x: 11, y: -30}
+  pos_4: {x: -10, y: -30}
+  spawn_rate_h: 40
+  spawn_rate_e: 40
 --- !u!1 &1660441171
 GameObject:
   m_ObjectHideFlags: 0
