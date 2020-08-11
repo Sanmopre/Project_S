@@ -10,6 +10,10 @@ public class PauseMenu : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
 
+    public bool fading_in = false;
+
+    public Fade_black fade;
+
     // Update is called once per frame
     void Update()
     {
@@ -25,6 +29,18 @@ public class PauseMenu : MonoBehaviour
             }
         
         }
+
+
+        if (fading_in) {
+            fade.Fade_In();
+            if (fade.in_finished)
+            {
+                SceneManager.LoadScene("Main_menu");
+            }
+
+        }
+
+
     }
 
 
@@ -45,7 +61,7 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu() {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Main_menu");
+        fading_in = true;
     }
 
     public void QuitGame() {
