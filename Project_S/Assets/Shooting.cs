@@ -8,6 +8,8 @@ public class Shooting : MonoBehaviour
     public Transform firePoint_2;
     public Transform firePoint_3;
 
+    public PlayerMovement movement;
+
     public PlayerMovement mov;
     private float cd_cast = 0;
 
@@ -57,7 +59,7 @@ public class Shooting : MonoBehaviour
         if (Input.GetButtonDown("Submit"))
         {
             heat_count = 0;
-
+            movement.stamina = movement.stamina - 2;
             if (w_type == Weapon_Type.W_2)
             {
                 w_type = Weapon_Type.W_1;

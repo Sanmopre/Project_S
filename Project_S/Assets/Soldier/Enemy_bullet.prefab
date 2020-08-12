@@ -137,7 +137,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 150
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 4988817079615781254, guid: bb3c8f5735955d54abf1fa7f0d6b6744,
+    type: 3}
 --- !u!58 &3048267165812240111
 CircleCollider2D:
   m_ObjectHideFlags: 0
