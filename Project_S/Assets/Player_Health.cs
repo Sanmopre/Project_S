@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player_Health : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class Player_Health : MonoBehaviour
     private int poison_damage = 0;
     private int poison_time = 0;
     public HealthBar hp_bar;
+
+    public bool dead = false;
+    float death_timer = 0;
+    public float death_timer_max;
+    public Image black;
+    public GameObject fade_obj;
 
     private GameObject x;
     private Score_Manager score;
@@ -48,7 +55,17 @@ public class Player_Health : MonoBehaviour
 
 
         if (hp <= 0) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            dead = true;
+        }
+
+
+        if (dead) {
+            fade_obj.SetActive(true);
+            death_timer = death_timer + Time.deltaTime;
+            black.color = new Color(0, 0, 0, death_timer/ death_timer_max);
+            if (death_timer > death_timer_max) {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            }
         }
 
 

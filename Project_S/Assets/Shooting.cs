@@ -30,6 +30,7 @@ public class Shooting : MonoBehaviour
     public GameObject missilePrefab;
 
     public Overheat_Slider heat;
+    public Player_Health health;
 
     private bool shooting = false;
 
@@ -56,75 +57,79 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Submit"))
+        if (!health.dead)
         {
-            heat_count = 0;
-            movement.stamina = movement.stamina - 2;
-            if (w_type == Weapon_Type.W_2)
+            if (Input.GetButtonDown("Submit"))
             {
-                w_type = Weapon_Type.W_1;
-                fire_rate = first_fr;
+                heat_count = 0;
+                movement.stamina = movement.stamina - 2;
+                if (w_type == Weapon_Type.W_2)
+                {
+                    w_type = Weapon_Type.W_1;
+                    fire_rate = first_fr;
+                }
+                else if (w_type == Weapon_Type.W_3)
+                {
+                    w_type = Weapon_Type.W_2;
+                    fire_rate = second_fr;
+                }
+                else if (w_type == Weapon_Type.W_1)
+                {
+                    w_type = Weapon_Type.W_3;
+                    fire_rate = third_fr;
+                }
+
+
+
             }
-            else if (w_type == Weapon_Type.W_3)
+
+
+
+
+
+
+            if (Input.GetButtonDown("Fire1") && cd_cast >= fire_rate)
             {
-                w_type = Weapon_Type.W_2;
-                fire_rate = second_fr;
+                shooting = true;
+                cd_cast = 0;
             }
-            else if (w_type == Weapon_Type.W_1)
+
+            if (Input.GetButtonUp("Fire1"))
             {
-                w_type = Weapon_Type.W_3;
-                fire_rate = third_fr;
+                shooting = false;
             }
 
-    
-
-        }
-
-
-
-    
-
-
-            if (Input.GetButtonDown("Fire1")  && cd_cast >= fire_rate)
-        {
-            shooting = true;
-            cd_cast = 0;
-        }
-
-        if (Input.GetButtonUp("Fire1")) 
-        {
-            shooting = false;
-        }
-
-        if (shooting == true && fire_counter >= fire_rate && mov.sprinting == false && heat_count < max_heat) 
-        {
+            if (shooting == true && fire_counter >= fire_rate && mov.sprinting == false && heat_count < max_heat)
+            {
 
                 Shoot(w_type);
-            if (w_type == Weapon_Type.W_2) {
-                heat_count = heat_count + 1;
+                if (w_type == Weapon_Type.W_2)
+                {
+                    heat_count = heat_count + 1;
+                }
+
+                if (w_type == Weapon_Type.W_1)
+                {
+                    heat_count = heat_count + 4;
+                }
+
+                if (w_type == Weapon_Type.W_3)
+                {
+                    heat_count = heat_count + 20;
+                }
+                fire_counter = 0;
             }
 
-            if (w_type == Weapon_Type.W_1)
+            fire_counter = fire_counter + Time.deltaTime;
+            cd_cast = cd_cast + Time.deltaTime;
+            if (shooting == false)
             {
-                heat_count = heat_count + 4;
+                fire_counter = fire_rate;
             }
 
-            if (w_type == Weapon_Type.W_3)
-            {
-                heat_count = heat_count + 20;
-            }           
-            fire_counter = 0;
+            heat.Set_heat((int)heat_count);
         }
-
-        fire_counter = fire_counter + Time.deltaTime;
-        cd_cast = cd_cast + Time.deltaTime;
-        if (shooting == false)
-        {
-            fire_counter = fire_rate;
         }
-
-        heat.Set_heat((int)heat_count);
-    }
 
 
 

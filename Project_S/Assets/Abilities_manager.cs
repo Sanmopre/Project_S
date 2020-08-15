@@ -7,10 +7,12 @@ public class Abilities_manager : MonoBehaviour
     public TrailRenderer trail;
     public Sprite Ultimate_Sprite;
     public Sprite Normal_Sprite;
+    public Sprite Dead_Sprite;
     public PlayerMovement mov;
     private int trail_delay = 10;
     private int counter = 10;
 
+    public Player_Health health;
 
     private GameObject obj;
     private Score_Manager score;
@@ -36,28 +38,35 @@ public class Abilities_manager : MonoBehaviour
     void Update()
     {
 
-        
 
-        if (mov.sprinting)
+
+        if (!health.dead)
         {
-            saw_collider.enabled = true;
-            trail.enabled = true;
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = Ultimate_Sprite;
-            counter = 15;
+            if (mov.sprinting)
+            {
+                saw_collider.enabled = true;
+                trail.enabled = true;
+                this.gameObject.GetComponent<SpriteRenderer>().sprite = Ultimate_Sprite;
+                counter = 15;
+            }
+            else
+            {
+                saw_collider.enabled = false;
+                if (counter < 0)
+                {
+                    trail.enabled = false;
+                }
+                this.gameObject.GetComponent<SpriteRenderer>().sprite = Normal_Sprite;
+
+
+                blade_counter = 0;
+            }
+            counter--;
         }
         else {
-            saw_collider.enabled = false;
-            if (counter < 0)
-            {
-                trail.enabled = false;
-            }
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = Normal_Sprite;
-
-
-            blade_counter = 0;
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = Dead_Sprite;
         }
-        counter--;
-    }
+        }
 
 
     private void OnTriggerEnter2D(Collider2D collider)

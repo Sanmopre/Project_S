@@ -46506,6 +46506,10 @@ MonoBehaviour:
   Max_hp: 300
   hp: 300
   hp_bar: {fileID: 93917029}
+  dead: 0
+  death_timer_max: 4
+  black: {fileID: 987309173}
+  fade_obj: {fileID: 1098641780}
 --- !u!96 &404898013 stripped
 TrailRenderer:
   m_CorrespondingSourceObject: {fileID: 6883580413343953388, guid: c964a649ce5b38242940557d13c6ec37,
@@ -50173,6 +50177,11 @@ PrefabInstance:
       propertyPath: movement
       value: 
       objectReference: {fileID: 404898016}
+    - target: {fileID: 6883580413343953386, guid: c964a649ce5b38242940557d13c6ec37,
+        type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 404898011}
     - target: {fileID: 6883580413343953391, guid: c964a649ce5b38242940557d13c6ec37,
         type: 3}
       propertyPath: trail
@@ -50193,5 +50202,16 @@ PrefabInstance:
       propertyPath: ab
       value: 
       objectReference: {fileID: 1342724974}
+    - target: {fileID: 6883580413343953391, guid: c964a649ce5b38242940557d13c6ec37,
+        type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 404898011}
+    - target: {fileID: 6883580413343953391, guid: c964a649ce5b38242940557d13c6ec37,
+        type: 3}
+      propertyPath: Dead_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: dae84e57f47dde942883218b8b7d687f,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c964a649ce5b38242940557d13c6ec37, type: 3}

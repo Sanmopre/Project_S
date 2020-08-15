@@ -46,66 +46,74 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      movement.x = Input.GetAxisRaw("Horizontal");
-      movement.y = Input.GetAxisRaw("Vertical");
-
-        if (Input.GetButtonDown("Sprint") && cd_sprint >= sprint_cooldown)
+        if (!health.dead)
         {
-            sprinting = true;
-            cd_sprint = 0;
-        }
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetButtonUp("Sprint"))
-        {
-            sprinting = false;
-        }
+            if (Input.GetButtonDown("Sprint") && cd_sprint >= sprint_cooldown)
+            {
+                sprinting = true;
+                cd_sprint = 0;
+            }
 
-        if (sprinting == true)
-        {
-            stamina = stamina - Time.deltaTime * 5;
-        }
-        else {
-            if(stamina < max_stamina)
-            stamina = stamina + Time.deltaTime * 3;
-            cd_sprint = cd_sprint + Time.deltaTime;
-        }
+            if (Input.GetButtonUp("Sprint"))
+            {
+                sprinting = false;
+            }
+
+            if (sprinting == true)
+            {
+                stamina = stamina - Time.deltaTime * 5;
+            }
+            else
+            {
+                if (stamina < max_stamina)
+                    stamina = stamina + Time.deltaTime * 3;
+                cd_sprint = cd_sprint + Time.deltaTime;
+            }
 
 
 
-           
- 
 
 
-        if (stamina <= 0) {
-            sprinting = false;
-        }
 
-        if (sprinting) {
 
-            if (Input.GetButtonDown("Fire1") && can_activate_boost) {
+            if (stamina <= 0)
+            {
+                sprinting = false;
+            }
 
-                if (first_point < stamina && second_point > stamina)
+            if (sprinting)
+            {
+
+                if (Input.GetButtonDown("Fire1") && can_activate_boost)
                 {
-                    stamina = stamina + 4;
-                    can_activate_boost = false;
-                }
-                else {
-                    health.Take_Damage(30);
+
+                    if (first_point < stamina && second_point > stamina)
+                    {
+                        stamina = stamina + 4;
+                        can_activate_boost = false;
+                    }
+                    else
+                    {
+                        health.Take_Damage(30);
+                    }
+
                 }
 
             }
 
+
+            if (!sprinting) { can_activate_boost = true; }
+
+            if (stamina > max_stamina) { stamina = max_stamina; }
+
+            stamina_bar.Set_Stamina(stamina);
+            ab.Set_Ability_cd(cd_sprint);
+            mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         }
-
-
-        if (!sprinting) { can_activate_boost = true; }
-
-        if (stamina > max_stamina) { stamina = max_stamina; }
-
-        stamina_bar.Set_Stamina(stamina);
-        ab.Set_Ability_cd(cd_sprint);
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-    }
+        }
 
     void FixedUpdate()
     {
