@@ -62,23 +62,25 @@ public class Shooting : MonoBehaviour
             if (Input.GetButtonDown("Submit"))
             {
                 heat_count = 0;
-                movement.stamina = movement.stamina - 2;
-                if (w_type == Weapon_Type.W_2)
+                if (movement.stamina > 2)
                 {
-                    w_type = Weapon_Type.W_1;
-                    fire_rate = first_fr;
+                    movement.stamina = movement.stamina - 2;
+                    if (w_type == Weapon_Type.W_2)
+                    {
+                        w_type = Weapon_Type.W_1;
+                        fire_rate = first_fr;
+                    }
+                    else if (w_type == Weapon_Type.W_3)
+                    {
+                        w_type = Weapon_Type.W_2;
+                        fire_rate = second_fr;
+                    }
+                    else if (w_type == Weapon_Type.W_1)
+                    {
+                        w_type = Weapon_Type.W_3;
+                        fire_rate = third_fr;
+                    }
                 }
-                else if (w_type == Weapon_Type.W_3)
-                {
-                    w_type = Weapon_Type.W_2;
-                    fire_rate = second_fr;
-                }
-                else if (w_type == Weapon_Type.W_1)
-                {
-                    w_type = Weapon_Type.W_3;
-                    fire_rate = third_fr;
-                }
-
 
 
             }
