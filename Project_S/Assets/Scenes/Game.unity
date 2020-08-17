@@ -46464,6 +46464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef5d5ed6176cb2d4a84f7dac0620c6b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GamePause: 0
   pauseMenuUI: {fileID: 1776713928}
   transition: {fileID: 0}
   transitionTime: 1
@@ -50182,6 +50183,11 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 404898011}
+    - target: {fileID: 6883580413343953386, guid: c964a649ce5b38242940557d13c6ec37,
+        type: 3}
+      propertyPath: pause
+      value: 
+      objectReference: {fileID: 337155671}
     - target: {fileID: 6883580413343953391, guid: c964a649ce5b38242940557d13c6ec37,
         type: 3}
       propertyPath: trail
