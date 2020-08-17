@@ -10,6 +10,8 @@ public class Shooting : MonoBehaviour
 
     public PlayerMovement movement;
 
+    public PauseMenu pause;
+
     public PlayerMovement mov;
     private float cd_cast = 0;
 
@@ -57,7 +59,7 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!health.dead)
+        if (!health.dead && !pause.GamePause)
         {
             if (Input.GetButtonDown("Submit"))
             {
